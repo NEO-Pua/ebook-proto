@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FAF6EE" />
+  <title>KAMADO — Culinary Editions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============== LOADER ============== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-mark">K</div>
+      <div class="loader-text">KAMADO</div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============== NAVIGATION ============== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <button class="nav-menu" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="#editions">Editions</a>
+        <a href="#chefs">Chefs</a>
+        <a href="#films">Films</a>
+        <a href="#journal">Journal</a>
+      </nav>
+
+      <a href="#" class="nav-logo">
+        <span class="logo-mark">K</span>
+        <span class="logo-text">KAMADO</span>
+      </a>
+
+      <div class="nav-actions">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn active" data-lang="EN">EN</button>
+          <button class="lang-btn" data-lang="JA">日本</button>
+          <button class="lang-btn" data-lang="ZH">中文</button>
+        </div>
+        <button class="icon-btn" aria-label="Search" id="searchBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Account" id="accountBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart" id="cartBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6h18l-2 12H5L3 6Z"/><path d="M8 6V4a4 4 0 0 1 8 0v2"/></svg>
+          <span class="cart-count" id="cartCount">2</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== MOBILE MENU ============== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <span class="logo-text">KAMADO</span>
+        <button class="icon-btn" id="closeMenu" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="#editions" class="reveal">Editions <span class="num">01</span></a>
+        <a href="#chefs" class="reveal">Chefs <span class="num">02</span></a>
+        <a href="#films" class="reveal">Films <span class="num">03</span></a>
+        <a href="#journal" class="reveal">Journal <span class="num">04</span></a>
+        <a href="#account" class="reveal">My Library <span class="num">05</span></a>
+      </nav>
+      <div class="mobile-menu-foot">
+        <div class="lang-switch">
+          <button class="lang-btn active">EN</button>
+          <button class="lang-btn">日本</button>
+          <button class="lang-btn">中文</button>
+        </div>
+        <p class="muted">© KAMADO 2026 · Tokyo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-image hero-image-active">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1600&q=80" alt="Featured cookbook"/>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1565895405137-61bf73c8a18b?w=1600&q=80" alt="Featured cookbook"/>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?w=1600&q=80" alt="Featured cookbook"/>
+      </div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="line"></span>
+        <span>Spring Edition · No. 04</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-line"><em>The Quiet Art</em></span>
+        <span class="hero-line">of Japanese</span>
+        <span class="hero-line">Home Cooking</span>
+      </h1>
+      <p class="hero-sub">A 248-page tome with 36 short films · by Chef Yuki Tanaka</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openBookDetail()">
+          <span>Read the preview</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+        <button class="btn-ghost" onclick="openReader()">Open the film</button>
+      </div>
+      <div class="hero-meta">
+        <div><span class="meta-num">¥4,800</span><span class="meta-label">tax incl.</span></div>
+        <div class="meta-divider"></div>
+        <div><span class="meta-num">36</span><span class="meta-label">films</span></div>
+        <div class="meta-divider"></div>
+        <div><span class="meta-num">62</span><span class="meta-label">recipes</span></div>
+      </div>
+    </div>
+
+    <div class="hero-pagination">
+      <button class="dot active" data-slide="0"></button>
+      <button class="dot" data-slide="1"></button>
+      <button class="dot" data-slide="2"></button>
+    </div>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============== EDITORIAL INTRO ============== -->
+  <section class="editorial">
+    <div class="editorial-grid">
+      <div class="editorial-side">
+        <p class="section-eyebrow">— A Note from the Editors</p>
+      </div>
+      <div class="editorial-main">
+        <p class="editorial-lead reveal">
+          KAMADO is a library of cookbooks for the curious cook. Every edition
+          is composed by a single chef, paired with a series of short films,
+          and delivered through a reader designed to feel like the kitchen
+          itself — <em>warm, considered, unhurried.</em>
+        </p>
+        <div class="editorial-meta reveal">
+          <span>Tokyo · Est. 2024</span>
+          <span>·</span>
+          <span>27 Editions in Print</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FEATURED EDITIONS ============== -->
+  <section class="editions" id="editions">
+    <div class="section-head">
+      <div>
+        <p class="section-eyebrow">— 01 / Editions</p>
+        <h2 class="section-title">Spring <em>Selections</em></h2>
+      </div>
+      <div class="section-aside">
+        <p>Six new tomes for the season — from kaiseki home practice to the slow bread of Hokkaido.</p>
+        <a href="#" class="link-arrow">View all 27 editions <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="book-rail" id="bookRail">
+      <article class="book-card" data-book="1">
+        <div class="book-cover">
+          <img src="https://images.unsplash.com/photo-1525093904610-4b1af7a3d502?w=600&q=80" alt="Cookbook cover"/>
+          <div class="book-hover">
+            <button class="book-quick" onclick="event.stopPropagation(); openBookDetail()">Quick view</button>
+            <button class="book-add" onclick="event.stopPropagation(); addToCart(this)">+ Add</button>
+          </div>
+          <span class="book-tag">New</span>
+        </div>
+        <div class="book-meta">
+          <p class="book-chef">Yuki Tanaka</p>
+          <h3 class="book-title">The Quiet Art of Japanese Home Cooking</h3>
+          <div class="book-foot">
+            <span class="book-price">¥4,800</span>
+            <span class="book-pages">248 pages · 36 films</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-book="2">
+        <div class="book-cover">
+          <img src="https://images.unsplash.com/photo-1505253468034-514d2507d914?w=600&q=80" alt="Cookbook cover"/>
+          <div class="book-hover">
+            <button class="book-quick" onclick="event.stopPropagation(); openBookDetail()">Quick view</button>
+            <button class="book-add" onclick="event.stopPropagation(); addToCart(this)">+ Add</button>
+          </div>
+        </div>
+        <div class="book-meta">
+          <p class="book-chef">Hana Mori</p>
+          <h3 class="book-title">Bread of the Northern Coast</h3>
+          <div class="book-foot">
+            <span class="book-price">¥3,600</span>
+            <span class="book-pages">192 pages · 18 films</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-book="3">
+        <div class="book-cover">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=80" alt="Cookbook cover"/>
+          <div class="book-hover">
+            <button class="book-quick" onclick="event.stopPropagation(); openBookDetail()">Quick view</button>
+            <button class="book-add" onclick="event.stopPropagation(); addToCart(this)">+ Add</button>
+          </div>
+          <span class="book-tag tag-gold">Bestseller</span>
+        </div>
+        <div class="book-meta">
+          <p class="book-chef">Liu Wei</p>
+          <h3 class="book-title">Sichuan, After the Market</h3>
+          <div class="book-foot">
+            <span class="book-price">¥4,200</span>
+            <span class="book-pages">216 pages · 24 films</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-book="4">
+        <div class="book-cover">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80" alt="Cookbook cover"/>
+          <div class="book-hover">
+            <button class="book-quick" onclick="event.stopPropagation(); openBookDetail()">Quick view</button>
+            <button class="book-add" onclick="event.stopPropagation(); addToCart(this)">+ Add</button>
+          </div>
+        </div>
+        <div class="book-meta">
+          <p class="book-chef">Sophia Ricci</p>
+          <h3 class="book-title">A Year in Tuscan Light</h3>
+          <div class="book-foot">
+            <span class="book-price">¥5,200</span>
+            <span class="book-pages">312 pages · 41 films</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-book="5">
+        <div class="book-cover">
+          <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80" alt="Cookbook cover"/>
+          <div class="book-hover">
+            <button class="book-quick" onclick="event.stopPropagation(); openBookDetail()">Quick view</button>
+            <button class="book-add" onclick="event.stopPropagation(); addToCart(this)">+ Add</button>
+          </div>
+        </div>
+        <div class="book-meta">
+          <p class="book-chef">Kenji Watanabe</p>
+          <h3 class="book-title">The Ramen Field Notes</h3>
+          <div class="book-foot">
+            <span class="book-price">¥3,900</span>
+            <span class="book-pages">176 pages · 22 films</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-book="6">
+        <div class="book-cover">
+          <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&q=80" alt="Cookbook cover"/>
+          <div class="book-hover">
+            <button class="book-quick" onclick="event.stopPropagation(); openBookDetail()">Quick view</button>
+            <button class="book-add" onclick="event.stopPropagation(); addToCart(this)">+ Add</button>
+          </div>
+          <span class="book-tag">Preorder</span>
+        </div>
+        <div class="book-meta">
+          <p class="book-chef">Aoi Sakurai</p>
+          <h3 class="book-title">Vegetable Kingdom</h3>
+          <div class="book-foot">
+            <span class="book-price">¥4,400</span>
+            <span class="book-pages">232 pages · 28 films</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="rail-controls">
+      <button class="rail-btn" id="railPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5m6 6-6-6 6-6"/></svg>
+      </button>
+      <span class="rail-progress"><span class="rail-progress-fill" id="railProgress"></span></span>
+      <button class="rail-btn" id="railNext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============== FEATURE STRIP: READER ============== -->
+  <section class="feature feature-reader">
+    <div class="feature-image">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="Reader experience"/>
+      <div class="feature-overlay"></div>
+      <div class="feature-mock">
+        <div class="mock-window">
+          <div class="mock-toolbar">
+            <span></span><span></span><span></span>
+            <span class="mock-title">第三章 — 出汁の基礎</span>
+          </div>
+          <div class="mock-content">
+            <h4>三 · Dashi · 出汁</h4>
+            <p>The foundation of every Japanese kitchen. A clear broth pulled from two ingredients and patience.</p>
+            <div class="mock-video">
+              <div class="mock-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg></div>
+              <span>02:14 · Watch technique</span>
+            </div>
+            <p>Place a 10cm square of kombu in cold water and let it rest for one hour…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-text">
+      <p class="section-eyebrow">— A Reader, Reimagined</p>
+      <h2 class="section-title">Like a cookbook<br/><em>on the counter.</em></h2>
+      <p class="feature-lead">
+        Our reader is built around the rhythms of cooking — generous typography,
+        a dedicated cooking mode that keeps your screen awake, integrated
+        timers, and short films that play exactly where the recipe calls for them.
+      </p>
+      <ul class="feature-list">
+        <li><span class="bullet">·</span><span>Cooking Mode keeps the screen on and steps oversized</span></li>
+        <li><span class="bullet">·</span><span>Inline films, with a single tap to expand</span></li>
+        <li><span class="bullet">·</span><span>Bookmarks, four-colour highlights, marginal notes</span></li>
+        <li><span class="bullet">·</span><span>Three themes — Paper, Sepia, Midnight</span></li>
+      </ul>
+      <button class="btn-secondary" onclick="openReader()">
+        <span>Open the demonstration</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============== CATEGORIES ============== -->
+  <section class="categories">
+    <div class="section-head">
+      <div>
+        <p class="section-eyebrow">— 02 / Cuisine</p>
+        <h2 class="section-title">By <em>Kitchen</em></h2>
+      </div>
+    </div>
+
+    <div class="cat-grid">
+      <a href="#" class="cat-tile">
+        <img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=600&q=80" alt="Japanese"/>
+        <div class="cat-tile-inner">
+          <span class="cat-num">和</span>
+          <h3>Japanese</h3>
+          <p>9 editions</p>
+        </div>
+      </a>
+      <a href="#" class="cat-tile">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Chinese"/>
+        <div class="cat-tile-inner">
+          <span class="cat-num">中</span>
+          <h3>Chinese</h3>
+          <p>4 editions</p>
+        </div>
+      </a>
+      <a href="#" class="cat-tile">
+        <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600&q=80" alt="Italian"/>
+        <div class="cat-tile-inner">
+          <span class="cat-num">伊</span>
+          <h3>Italian</h3>
+          <p>6 editions</p>
+        </div>
+      </a>
+      <a href="#" class="cat-tile">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Vegetarian"/>
+        <div class="cat-tile-inner">
+          <span class="cat-num">菜</span>
+          <h3>Vegetarian</h3>
+          <p>5 editions</p>
+        </div>
+      </a>
+      <a href="#" class="cat-tile">
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Pâtisserie"/>
+        <div class="cat-tile-inner">
+          <span class="cat-num">菓</span>
+          <h3>Pâtisserie</h3>
+          <p>3 editions</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============== CHEF SPOTLIGHT ============== -->
+  <section class="chef" id="chefs">
+    <div class="chef-grid">
+      <div class="chef-image">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=900&q=80" alt="Chef portrait"/>
+        <div class="chef-frame"></div>
+      </div>
+      <div class="chef-text">
+        <p class="section-eyebrow">— 03 / Chef in Residence</p>
+        <h2 class="chef-name">Yuki<br/><em>Tanaka</em></h2>
+        <p class="chef-quote">
+          "A recipe is a letter — to someone you have not yet met, who will
+          one day open a window and let the steam rise into their kitchen."
+        </p>
+        <div class="chef-stats">
+          <div>
+            <span class="stat-num">12</span>
+            <span class="stat-label">years at Den, Tokyo</span>
+          </div>
+          <div>
+            <span class="stat-num">3</span>
+            <span class="stat-label">editions with KAMADO</span>
+          </div>
+          <div>
+            <span class="stat-num">112</span>
+            <span class="stat-label">recipes published</span>
+          </div>
+        </div>
+        <a href="#" class="link-arrow">Read the interview <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FILM SHOWCASE ============== -->
+  <section class="films" id="films">
+    <div class="section-head">
+      <div>
+        <p class="section-eyebrow">— 04 / Films</p>
+        <h2 class="section-title">Watch, then <em>cook.</em></h2>
+      </div>
+      <div class="section-aside">
+        <p>Short, beautifully shot tutorials — one technique at a time. Included with every edition.</p>
+      </div>
+    </div>
+
+    <div class="film-grid">
+      <div class="film-card film-large">
+        <div class="film-thumb">
+          <img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=900&q=80" alt="Film"/>
+          <button class="film-play" onclick="playFilm(this)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+          </button>
+          <span class="film-duration">04:18</span>
+        </div>
+        <div class="film-meta">
+          <span class="film-chapter">From "The Quiet Art" · Ch.3</span>
+          <h3>Drawing dashi from cold water and time</h3>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-thumb">
+          <img src="https://images.unsplash.com/photo-1574484184081-afea8a62f9d6?w=600&q=80" alt="Film"/>
+          <button class="film-play" onclick="playFilm(this)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+          </button>
+          <span class="film-duration">02:42</span>
+        </div>
+        <div class="film-meta">
+          <span class="film-chapter">From "Sichuan" · Ch.1</span>
+          <h3>Toasting the Sichuan peppercorn</h3>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-thumb">
+          <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80" alt="Film"/>
+          <button class="film-play" onclick="playFilm(this)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+          </button>
+          <span class="film-duration">03:51</span>
+        </div>
+        <div class="film-meta">
+          <span class="film-chapter">From "Tuscan Light" · Ch.6</span>
+          <h3>Folding a hand-rolled pici</h3>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-thumb">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80" alt="Film"/>
+          <button class="film-play" onclick="playFilm(this)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+          </button>
+          <span class="film-duration">05:07</span>
+        </div>
+        <div class="film-meta">
+          <span class="film-chapter">From "Ramen Field Notes" · Ch.2</span>
+          <h3>The clear broth — chintan</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TESTIMONIAL ============== -->
+  <section class="quote">
+    <div class="quote-inner">
+      <span class="quote-mark">"</span>
+      <p>
+        The most beautiful cookbook reader on the web.
+        <em>It made me cook again.</em>
+      </p>
+      <div class="quote-author">
+        <span>— Casa Brutus</span>
+        <span class="quote-divider">·</span>
+        <span>Tokyo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== JOURNAL ============== -->
+  <section class="journal" id="journal">
+    <div class="section-head">
+      <div>
+        <p class="section-eyebrow">— 05 / Journal</p>
+        <h2 class="section-title">From the <em>Kitchen Counter</em></h2>
+      </div>
+    </div>
+
+    <div class="journal-grid">
+      <article class="journal-card">
+        <div class="journal-image">
+          <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800&q=80" alt="Journal"/>
+        </div>
+        <div class="journal-meta">
+          <span class="journal-tag">Essay</span>
+          <span class="journal-date">May 12, 2026</span>
+        </div>
+        <h3>On the smell of rice that has just been opened</h3>
+        <p>Why we publish four spring editions and never five.</p>
+      </article>
+
+      <article class="journal-card">
+        <div class="journal-image">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80" alt="Journal"/>
+        </div>
+        <div class="journal-meta">
+          <span class="journal-tag">Interview</span>
+          <span class="journal-date">May 02, 2026</span>
+        </div>
+        <h3>Hana Mori on the long bread of Otaru</h3>
+        <p>A conversation about the four loaves of childhood.</p>
+      </article>
+
+      <article class="journal-card">
+        <div class="journal-image">
+          <img src="https://images.unsplash.com/photo-1542367592-8849eb950fd8?w=800&q=80" alt="Journal"/>
+        </div>
+        <div class="journal-meta">
+          <span class="journal-tag">Studio Note</span>
+          <span class="journal-date">April 24, 2026</span>
+        </div>
+        <h3>How a film is made — Studio No.4, Daikanyama</h3>
+        <p>Behind 36 short films, three months of patient light.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== NEWSLETTER ============== -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <p class="section-eyebrow">— The Letter</p>
+        <h2>A quiet note,<br/><em>once a month.</em></h2>
+        <p>New editions, films from the studio, and a single recipe to keep.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+        <input type="email" placeholder="your.email@here" required />
+        <button type="submit">
+          <span>Subscribe</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-mark">K</span>
+        <span class="logo-text">KAMADO</span>
+        <p>A library of cookbooks, made in Tokyo, for the curious cook.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Editions</h4>
+        <a href="#">New this season</a>
+        <a href="#">All editions</a>
+        <a href="#">Bestsellers</a>
+        <a href="#">Gift</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Library</h4>
+        <a href="#">My books</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Orders</a>
+        <a href="#">Settings</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="#">About</a>
+        <a href="#">Chefs</a>
+        <a href="#">Contact</a>
+        <a href="#">Press</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Service</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">特定商取引法</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© KAMADO Editions 2026 ・ Made in Tokyo, Japan ・ All prices ¥ tax incl.</p>
+      <div class="footer-icons">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============== BOOK DETAIL MODAL ============== -->
+  <div class="modal" id="bookDetail">
+    <div class="modal-backdrop" onclick="closeBookDetail()"></div>
+    <div class="modal-panel modal-book">
+      <button class="modal-close" onclick="closeBookDetail()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <div class="book-detail">
+        <div class="book-detail-left">
+          <div class="book-cover-large">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=900&q=80" alt="Cover"/>
+            <span class="book-tag tag-gold">Spring No.04</span>
+          </div>
+          <div class="book-thumbs">
+            <div class="book-thumb active"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=70" alt=""/></div>
+            <div class="book-thumb"><img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=200&q=70" alt=""/></div>
+            <div class="book-thumb"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&q=70" alt=""/></div>
+            <div class="book-thumb"><img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=200&q=70" alt=""/></div>
+          </div>
+        </div>
+
+        <div class="book-detail-right">
+          <p class="section-eyebrow">— Spring Edition No.04 · 2026</p>
+          <h1 class="detail-title"><em>The Quiet Art</em><br/>of Japanese Home Cooking</h1>
+          <p class="detail-author">Chef Yuki Tanaka · 田中 由紀</p>
+
+          <div class="detail-rating">
+            <div class="stars">
+              <span class="star fill">★</span><span class="star fill">★</span><span class="star fill">★</span><span class="star fill">★</span><span class="star fill">★</span>
+            </div>
+            <span>4.9 · 312 readers</span>
+          </div>
+
+          <p class="detail-desc">
+            Sixty-two recipes drawn from a Tokyo kitchen — quiet, seasonal, unhurried.
+            Each chapter pairs with a short film, available the moment you open the cover.
+          </p>
+
+          <div class="detail-specs">
+            <div><span>248</span><label>pages</label></div>
+            <div><span>62</span><label>recipes</label></div>
+            <div><span>36</span><label>films</label></div>
+            <div><span>JA</span><label>language</label></div>
+          </div>
+
+          <div class="detail-price">
+            <span class="price-main">¥4,800</span>
+            <span class="price-tax">tax incl.</span>
+          </div>
+
+          <div class="detail-actions">
+            <button class="btn-primary btn-full" onclick="addToCartFromDetail()">
+              <span>Add to library — ¥4,800</span>
+            </button>
+            <div class="detail-actions-row">
+              <button class="btn-ghost btn-half" onclick="openReader()">Read preview</button>
+              <button class="btn-ghost btn-half">+ Wishlist</button>
+            </div>
+          </div>
+
+          <div class="detail-features">
+            <div class="feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6h18l-2 12H5L3 6Z"/><path d="m8 11 3 3 5-5"/></svg>
+              <span>Lifetime access · No subscription</span>
+            </div>
+            <div class="feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg>
+              <span>36 tutorial films included</span>
+            </div>
+            <div class="feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
+              <span>Read instantly · No download required</span>
+            </div>
+          </div>
+
+          <details class="detail-section">
+            <summary>Chapters</summary>
+            <ol class="toc">
+              <li><span>01</span> The Quiet Pantry</li>
+              <li><span>02</span> Rice, Three Ways</li>
+              <li><span>03</span> Dashi · Out of Cold Water</li>
+              <li><span>04</span> Vegetables in the Off Season</li>
+              <li><span>05</span> Fish, on a Tuesday Evening</li>
+              <li><span>06</span> The Bowl that Closes the Day</li>
+            </ol>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== READER MODAL ============== -->
+  <div class="modal modal-fullscreen" id="readerModal">
+    <div class="reader" data-theme="light">
+      <div class="reader-top">
+        <button class="reader-icon" onclick="closeReader()" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <div class="reader-title">
+          <span class="reader-eyebrow" id="readerEyebrow">The Quiet Art · Chapter 1</span>
+          <span class="reader-name" id="readerName">The Quiet Pantry</span>
+        </div>
+        <div class="reader-tools">
+          <button class="reader-icon theme-toggle" id="themeBtn" aria-label="Toggle dark mode" title="Light / Dark">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          </button>
+          <button class="reader-icon mode-toggle" id="modeBtn" aria-label="Toggle reading mode" title="Reading mode">
+            <svg class="icon-mode-page" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="8" height="16" rx="0.5"/><rect x="13" y="4" width="8" height="16" rx="0.5"/></svg>
+            <svg class="icon-mode-scroll" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14M5 12h14M5 16h14"/><path d="m9 4 3-2 3 2M9 20l3 2 3-2"/></svg>
+          </button>
+          <button class="reader-icon dir-toggle" id="directionBtn" aria-label="Page direction" title="Page direction">
+            <svg id="dirIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h12m-5-5 5 5-5 5M3 5v14"/></svg>
+          </button>
+          <button class="reader-icon" aria-label="Bookmark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="reader-body" id="readerBody">
+
+        <!-- ===== PAGE 0 / Cover ===== -->
+        <article class="reader-page reader-cover active" data-cover="true" data-page-num="cover" data-chapter-title="Book Cover">
+          <div class="cover-frame">
+            <div class="cover-content">
+              <p class="cover-eyebrow">KAMADO · Spring Edition No.04</p>
+              <div class="cover-book">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Cover" class="cover-image"/>
+              </div>
+              <h1 class="cover-title">The Quiet Art<br/><em>of Japanese<br/>Home Cooking</em></h1>
+              <p class="cover-author">by Chef Yuki Tanaka · 田中 由紀</p>
+              <p class="cover-meta">248 pages · 62 recipes · 36 short films</p>
+              <button class="cover-start-btn" id="coverStartBtn">
+                <span>Begin reading</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== PAGE 1 / Chapter 1 ===== -->
+        <article class="reader-page" data-chapter-num="1" data-chapter-title="The Quiet Pantry" data-page-num="12">
+          <p class="reader-chapter-num">Chapter One</p>
+          <h1 class="reader-h1">The Quiet<br/><em>Pantry</em></h1>
+          <p class="reader-lede">
+            The Japanese pantry begins with absence. Walk into a well-kept home
+            kitchen in Tokyo and you may be struck not by what is there, but by
+            what is not — no spice rack crowding the counter, no dozen oils. A
+            few jars on a low shelf, a wooden bowl, the morning light.
+          </p>
+
+          <p class="reader-p">
+            This is the first lesson of Japanese home cooking, and the most
+            difficult one for cooks trained in other traditions:
+            <span class="reader-highlight">fewer ingredients, used well, will always taste better than many ingredients used poorly.</span>
+            What follows is a list of what I keep — and, by absence, what I do not.
+          </p>
+
+          <h2 class="reader-h2">What lives on the shelf</h2>
+          <p class="reader-p">
+            Short-grain rice, never more than ten days from its bag opening.
+            Kombu — Rishiri if I can find it, Rausu otherwise — wrapped tightly
+            in paper, never plastic. Katsuobushi in a sealed jar, away from
+            light. Three soy sauces: usukuchi for clear soups, koikuchi for
+            everything else, and a small bottle of tamari for the rare evening
+            when a piece of fish wants depth.
+          </p>
+
+          <h2 class="reader-h2">What does not</h2>
+          <p class="reader-p">
+            I do not keep dried herbs. I do not keep more than one vinegar at a
+            time — when one is gone I buy the next, and learn it slowly. I do
+            not keep bouillon cubes; their job is done better by twenty minutes
+            of patience and a square of kombu.
+          </p>
+
+          <p class="reader-page-num">— 12 —</p>
+        </article>
+
+        <!-- ===== PAGE 2 / Chapter 2 ===== -->
+        <article class="reader-page" data-chapter-num="2" data-chapter-title="Rice, Three Ways" data-page-num="28">
+          <p class="reader-chapter-num">Chapter Two</p>
+          <h1 class="reader-h1">Rice,<br/><em>Three Ways</em></h1>
+          <p class="reader-lede">
+            If dashi is the foundation of the meal, rice is its architecture.
+            In a Japanese home, the rice is what makes the meal a meal —
+            without it, you are simply eating dishes that happen to be next to
+            each other on a table.
+          </p>
+
+          <div class="reader-film">
+            <div class="reader-film-thumb">
+              <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=900&q=80" alt="Film"/>
+              <button class="film-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg></button>
+            </div>
+            <div class="reader-film-meta">
+              <span>Film 02 · 03:12</span>
+              <p>Washing and steaming short-grain rice</p>
+            </div>
+          </div>
+
+          <h2 class="reader-h2">Gohan · the everyday</h2>
+          <p class="reader-p">
+            <span class="reader-highlight">Wash the rice in three changes of water</span>,
+            then a fourth that comes clear. Let it rest in cold water for thirty
+            minutes — no longer, no shorter. One cup of rice to one and one-tenth
+            cups of water; bring to a boil, drop to the lowest flame, and listen.
+            When the sound of the water disappears, the rice is done.
+          </p>
+
+          <div class="reader-recipe-card">
+            <p class="recipe-eyebrow">Recipe · 40 minutes · Serves 4</p>
+            <h3>The everyday rice</h3>
+            <button class="btn-secondary btn-small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11V5a3 3 0 0 1 6 0v6m-9 0h12l-1 9H7L6 11Z"/></svg>
+              <span>Cooking Mode</span>
+            </button>
+          </div>
+
+          <h2 class="reader-h2">Sumeshi · for the special evening</h2>
+          <p class="reader-p">
+            Sushi rice is gohan, fanned to a sheen, then turned three times
+            with a vinegar mixture — rice vinegar, sugar, salt — that has been
+            warmed just enough to dissolve but never to boil. The fan is not a
+            performance; it is what gives the rice its quiet shine.
+          </p>
+
+          <p class="reader-page-num">— 28 —</p>
+        </article>
+
+        <!-- ===== PAGE 3 / Chapter 3 (Dashi — featured) ===== -->
+        <article class="reader-page" data-chapter-num="3" data-chapter-title="Dashi · Out of Cold Water" data-page-num="47">
+          <p class="reader-chapter-num">Chapter Three</p>
+          <h1 class="reader-h1">Dashi<br/><em>三 · 出汁</em></h1>
+          <p class="reader-lede">
+            There is a moment, just before the kombu releases its colour, when
+            the water in the pot turns from clear to nearly clear — a shift you
+            see only if you are paying attention. This is the beginning of
+            every Japanese meal I have ever made.
+          </p>
+
+          <div class="reader-film">
+            <div class="reader-film-thumb">
+              <img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=900&q=80" alt="Film"/>
+              <button class="film-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg></button>
+            </div>
+            <div class="reader-film-meta">
+              <span>Film 03 · 04:18</span>
+              <p>Drawing dashi from cold water and time</p>
+            </div>
+          </div>
+
+          <h2 class="reader-h2">Notes on the kombu</h2>
+          <p class="reader-p">
+            Use Rishiri or Rausu if you can find it. Wipe — never wash — the
+            kombu with a dry cloth. The white powder is not dust; it is mannitol,
+            and it is the flavour you are after. <span class="reader-highlight">A 10cm square of kombu in one litre of cold water, for one hour</span>, then a slow rise to just before boiling.
+          </p>
+
+          <div class="reader-recipe-card">
+            <p class="recipe-eyebrow">Recipe · 25 minutes · Serves 4</p>
+            <h3>The basic dashi</h3>
+            <button class="btn-secondary btn-small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11V5a3 3 0 0 1 6 0v6m-9 0h12l-1 9H7L6 11Z"/></svg>
+              <span>Cooking Mode</span>
+            </button>
+          </div>
+
+          <h2 class="reader-h2">On the second pull</h2>
+          <p class="reader-p">
+            The kombu and the bonito have given you a clear, fragrant first
+            broth — ichiban-dashi, for clear soups and the lightest things.
+            But there is a second broth, niban-dashi, drawn from the same
+            ingredients with more time and a touch more water. This is the
+            broth for everyday cooking.
+          </p>
+
+          <p class="reader-page-num">— 47 —</p>
+        </article>
+
+        <!-- ===== PAGE 4 / Chapter 4 ===== -->
+        <article class="reader-page" data-chapter-num="4" data-chapter-title="Vegetables in the Off Season" data-page-num="72">
+          <p class="reader-chapter-num">Chapter Four</p>
+          <h1 class="reader-h1">Vegetables,<br/><em>off-season</em></h1>
+          <p class="reader-lede">
+            It is easy to cook well with the vegetables of the spring market —
+            the first peas, the bamboo shoots, the soft greens. The harder task,
+            the one that separates a cook from a careful one, is what to make
+            of a turnip in late February.
+          </p>
+
+          <p class="reader-p">
+            The answer, almost always, is to do less. A vegetable past its
+            season is not a vegetable to be hidden under sauces. It is a
+            vegetable to be cut more thinly, salted earlier, and met with one
+            other thing — a piece of yuzu peel, a drop of sesame oil, the
+            slightest miso glaze.
+          </p>
+
+          <h2 class="reader-h2">The slow turnip</h2>
+          <p class="reader-p">
+            <span class="reader-highlight">Quarter the turnips; salt them and wait twenty minutes.</span>
+            What comes off them is the water of the cold months, and what
+            remains is sweeter than you would have guessed. Glaze them in a
+            quiet pan with mirin and a small spoon of white miso. Finish with
+            a thread of the dashi from Chapter Three.
+          </p>
+
+          <div class="reader-film">
+            <div class="reader-film-thumb">
+              <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=900&q=80" alt="Film"/>
+              <button class="film-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg></button>
+            </div>
+            <div class="reader-film-meta">
+              <span>Film 07 · 02:54</span>
+              <p>Cutting the turnip for a glaze</p>
+            </div>
+          </div>
+
+          <div class="reader-recipe-card">
+            <p class="recipe-eyebrow">Recipe · 20 minutes · Serves 2</p>
+            <h3>Glazed turnip · white miso</h3>
+            <button class="btn-secondary btn-small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11V5a3 3 0 0 1 6 0v6m-9 0h12l-1 9H7L6 11Z"/></svg>
+              <span>Cooking Mode</span>
+            </button>
+          </div>
+
+          <p class="reader-page-num">— 72 —</p>
+        </article>
+
+        <!-- ===== PAGE 5 / Chapter 5 ===== -->
+        <article class="reader-page" data-chapter-num="5" data-chapter-title="Fish, on a Tuesday Evening" data-page-num="103">
+          <p class="reader-chapter-num">Chapter Five</p>
+          <h1 class="reader-h1">Fish, on a<br/><em>Tuesday evening</em></h1>
+          <p class="reader-lede">
+            Mackerel is the fish I have eaten more than any other. It is the
+            fish of weekday evenings — quick, oily enough to forgive a hot
+            grill, cheap enough to make often. There is no dignity lost in
+            calling it ordinary; ordinary is what we cook the most.
+          </p>
+
+          <h2 class="reader-h2">Salt, then patience</h2>
+          <p class="reader-p">
+            Lay the mackerel skin-down on a plate. <span class="reader-highlight">Salt it more than you think — a soft rain of salt, on both sides — and let it rest for thirty minutes.</span>
+            Water will come up. Pat it dry. This is the only preparation that
+            matters; the rest is heat, and time, and watching.
+          </p>
+
+          <div class="reader-film">
+            <div class="reader-film-thumb">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80" alt="Film"/>
+              <button class="film-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg></button>
+            </div>
+            <div class="reader-film-meta">
+              <span>Film 14 · 03:42</span>
+              <p>Salt-grilling a whole mackerel</p>
+            </div>
+          </div>
+
+          <div class="reader-recipe-card">
+            <p class="recipe-eyebrow">Recipe · 25 minutes · Serves 2</p>
+            <h3>Salt-grilled mackerel</h3>
+            <button class="btn-secondary btn-small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11V5a3 3 0 0 1 6 0v6m-9 0h12l-1 9H7L6 11Z"/></svg>
+              <span>Cooking Mode</span>
+            </button>
+          </div>
+
+          <h2 class="reader-h2">What goes with it</h2>
+          <p class="reader-p">
+            A bowl of rice, a small pile of grated daikon, a wedge of sudachi
+            or lemon. Soy sauce only if the fish was older than today's market.
+            This is a meal of fifteen minutes from the moment the grill is hot,
+            and it is the meal I cook most often, in any kitchen, in any city.
+          </p>
+
+          <p class="reader-page-num">— 103 —</p>
+        </article>
+
+        <!-- ===== PAGE 6 / Chapter 6 ===== -->
+        <article class="reader-page" data-chapter-num="6" data-chapter-title="The Bowl That Closes the Day" data-page-num="182">
+          <p class="reader-chapter-num">Chapter Six</p>
+          <h1 class="reader-h1">The bowl that<br/><em>closes the day</em></h1>
+          <p class="reader-lede">
+            The last bowl of a Japanese evening is the smallest one. It comes
+            after the rice, after the fish, after the small dishes — when the
+            table is already half-cleared, and the kettle has come to its
+            second boil of the night.
+          </p>
+
+          <p class="reader-p">
+            Ochazuke is hot tea, or sometimes dashi, poured over what is left
+            of the rice in the bowl. With it goes a piece of pickled plum, a
+            square of nori, perhaps a small mound of salted salmon flaked from
+            the morning's grill. It is a meal that costs nothing and takes a
+            minute, but it is the one I would choose, if I had to choose one
+            meal to keep.
+          </p>
+
+          <div class="reader-recipe-card">
+            <p class="recipe-eyebrow">Recipe · 5 minutes · Serves 1</p>
+            <h3>Ochazuke · お茶漬け</h3>
+            <button class="btn-secondary btn-small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11V5a3 3 0 0 1 6 0v6m-9 0h12l-1 9H7L6 11Z"/></svg>
+              <span>Cooking Mode</span>
+            </button>
+          </div>
+
+          <h2 class="reader-h2">An ending</h2>
+          <p class="reader-p">
+            <span class="reader-highlight">A cookbook is a letter to someone you have not yet met</span> — to the
+            person who, one evening, will open a window and let the steam
+            from a small bowl rise into a kitchen I will never see. I have
+            tried, in these pages, to write the letter I would have wanted
+            to receive. Thank you for opening it.
+          </p>
+
+          <p class="reader-p" style="font-family: var(--serif); font-style: italic; text-align: right; margin-top: 32px; color: var(--gold-deep);">
+            — Yuki Tanaka<br/>Tokyo, spring 2026
+          </p>
+
+          <p class="reader-page-num">— 182 —</p>
+        </article>
+
+      </div>
+
+      <div class="reader-bottom">
+        <button class="reader-icon" id="readerPrev" aria-label="Previous page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5m6 6-6-6 6-6"/></svg>
+        </button>
+        <button class="reader-progress" id="readerProgressBtn" aria-label="Jump to page">
+          <span id="readerProgressLabel">Cover</span>
+          <div class="progress-bar"><div class="progress-fill" id="readerProgressFill" style="width:2%"></div></div>
+        </button>
+        <button class="reader-icon" id="readerNext" aria-label="Next page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+      </div>
+
+      <!-- ===== PAGE JUMP PANEL ===== -->
+      <div class="page-jump" id="pageJump">
+        <div class="page-jump-head">
+          <h4>Jump to</h4>
+          <button class="reader-icon" id="pageJumpClose" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+        <div class="page-jump-list" id="pageJumpList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== CART DRAWER ============== -->
+  <div class="drawer" id="cartDrawer">
+    <div class="drawer-backdrop" onclick="closeCart()"></div>
+    <aside class="drawer-panel">
+      <div class="drawer-head">
+        <h3>Your Library Bag</h3>
+        <button class="icon-btn" onclick="closeCart()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="drawer-items" id="drawerItems">
+        <article class="cart-item">
+          <div class="cart-cover"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=70" alt=""/></div>
+          <div class="cart-meta">
+            <p class="cart-chef">Yuki Tanaka</p>
+            <h4>The Quiet Art of Japanese Home Cooking</h4>
+            <span class="cart-includes">248 pages · 36 films · Spring No.04</span>
+            <div class="cart-row">
+              <span class="cart-price">¥4,800</span>
+              <button class="cart-remove">Remove</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart-item">
+          <div class="cart-cover"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=200&q=70" alt=""/></div>
+          <div class="cart-meta">
+            <p class="cart-chef">Liu Wei</p>
+            <h4>Sichuan, After the Market</h4>
+            <span class="cart-includes">216 pages · 24 films</span>
+            <div class="cart-row">
+              <span class="cart-price">¥4,200</span>
+              <button class="cart-remove">Remove</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="drawer-foot">
+        <div class="cart-line"><span>Subtotal</span><span>¥9,000</span></div>
+        <div class="cart-line muted"><span>Consumption tax (10%)</span><span>included</span></div>
+        <div class="cart-line total"><span>Total</span><span>¥9,000</span></div>
+        <button class="btn-primary btn-full">
+          <span>Proceed to checkout</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+        <div class="payment-row">
+          <span>VISA</span><span>JCB</span><span>MC</span><span>PayPay</span><span>コンビニ</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ============== TOAST ============== -->
+  <div class="toast" id="toast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m5 12 4 4 10-10"/></svg>
+    <span>Added to your library bag</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
